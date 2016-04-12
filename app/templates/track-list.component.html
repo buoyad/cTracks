@@ -1,0 +1,5 @@
+<br/><br/>
+<label class="tracktable">all ctracks</label>
+<ul *ngIf="tracks">
+  <li *ngFor="#track of tracks" (click)="onSelect(track.id)">{{track.topic}}</li>
+</ul>

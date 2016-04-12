@@ -1,0 +1,52 @@
+body {
+	margin: 0;
+}
+
+header {
+	background-image: url("/img/ban.jpg");
+	background-position: left;
+	width: 100%;
+	width: 100vw;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+}
+
+.head {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+header h1 {
+	font-family: 'PT Sans';
+	font-weight: bold;
+	color: white;
+	margin-top: 0px;
+	padding-top: 4px;
+	font-size: 30pt;
+	float: left;
+}
+
+header a {
+	font-family: 'Open Sans';
+	font-weight: semibold;
+	text-decoration: none;
+	color: white;
+	font-size: 16pt;
+	float: right;
+	text-align: right;
+	padding-top: 18px;
+}
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+label.tracktable {
+	font-family: 'PT Sans';
+	font-weight: regular;
+	color: rgba(153, 153, 153, 1);
+	width: 100%;
+	border-bottom: 1px solid rgba(153, 153, 204, 1);
+}
