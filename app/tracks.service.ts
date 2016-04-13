@@ -16,8 +16,10 @@ export class TracksService {
 	}
 
 	pushTrack(newTrack: cTrack) {
-		let ref = this.database.push(newTrack);
+		let ref = this.database.push();
 		ref.set({ id: ref.key() });
+		ref.set(newTrack);
+		return ref.key();
 	}
 
 	getTracks(): Observable<cTrack> {

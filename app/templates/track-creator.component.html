@@ -1,3 +1,22 @@
 <br/>
 <h2>new cTrack</h2>
-<form></form>
+<form (ngSubmit)="pushTrack()" #newTrackForm="ngForm" class="newTrackForm">
+	<input type="text" [(ngModel)]="topic" placeholder="Topic" class="topicForm" required/><br/>
+	<input type="text" [(ngModel)]="description" placeholder="Summary" class="summaryForm" required/><br/><br/>
+	<label>Add articles:</label>
+	<dl class="itemList">
+	<span *ngFor="#item of items" required>
+		<dt>
+		<a href="{{item.url}}">{{item.title}}</a>
+		</dt>
+		<dd> {{item.comment}} </dd>
+	</span>
+	</dl>
+	<form class="newArticleForm" (ngSubmit)="addArticle(title, url, comment)" #newItemForm="ngForm">
+		<button type="submit" [disabled]="!newItemForm.form.valid">+</button>
+		<input type="text" [(ngModel)]="title" placeholder="Title" required/>
+		<input type="url" [(ngModel)]="url" placeholder="url" required/><br/>
+		<textarea type="text" [(ngModel)]="comment" placeholder="Description"></textarea>
+	</form><br/>
+	<button type="submit" [disabled]="!newTrackForm.form.valid">Create track</button>
+</form>

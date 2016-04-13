@@ -33,7 +33,6 @@ header h1 {
 
 header a {
 	font-family: 'Open Sans';
-	font-weight: semibold;
 	color: white;
 	font-size: 16pt;
 	color: rgba(255, 255, 255, .7);
@@ -86,14 +85,107 @@ div.trackTitle:hover {
 div.trackDesc {
 	font-family: 'Open Sans';
 	font-size: 11pt;
-	float: right;
 	position: static;
 	color: rgba(102,102,102,1);
 }
 
 main h2 {
 	font-family: 'Open Sans';
-	font-weight: semibold;
 	color: rgb(54, 54, 54);
+}
+
+main a {
+	font-family: 'PT Sans';
+	font-size: 25px;
+	color: orange;
+}
+
+main a:hover {
+	text-decoration: underline;
+}
+
+form.newTrackForm {
+	font-family: 'Open Sans';
+	color: rgb(54, 54, 54);
+	margin-top: -10px;
+}
+
+form.newTrackForm input {
+	-webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+}
+
+input.topicForm {
+	font-weight: bold;
+	color: white;
+	max-width: 500px;
+	width: 100%;
+	padding: 6px 20px;
+	font-size: 18pt;
+}
+
+input.summaryForm {
+	font-size: 11pt;
+	max-width: 500px;
+	width: 100%;
+	margin-top: 5px;
+	padding: 6px 20px;
+}
+
+input.topicForm.ng-valid {
+	background-color: rgba(255, 153, 102, 1);
+	border: none;
+	margin: 2px;  /*Compensate for missing border*/
+}
+
+form.newTrackForm label {
+	color: rgb(54, 54, 54);
+	margin-left: 15px;
+}
+
+form.newArticleForm input {
+	width: 30%;
+	margin-right: 5px;
+	padding: 5px 5px;
+}
+
+form.newArticleForm textarea {
+	width: 30%;
 	margin-left: 50px;
+	margin-top: 2px;
+	resize: none;
+	padding: 5px 5px;
+}
+
+form dl {
+	font-size: 18px;
+}
+
+form dd {
+	margin-left: 5px;
+	font-size: 12pt;
+	border-bottom: 2px solid rgba(105, 105, 105, .3);
+}
+
+form button {
+	font-size: 15px;
+	margin: 10px;
+}
+
+div.viewer dt {
+	font-family: 'PT Sans';
+	font-size: 20px;
+}
+
+div.viewer dd {
+	font-family: 'Open Sans';
+	font-size: 15px;
+	border-bottom: 2px solid rgba(105, 105, 105, .3);
+	padding-bottom: 15px;
+	margin-bottom: 10px;
+}
+
+div.viewer dl {
+	border-bottom: none;
+	list-style-type: disc;
 }

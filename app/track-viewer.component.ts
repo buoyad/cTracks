@@ -8,7 +8,7 @@ import {RouteParams} 				from 'angular2/router';
 
 @Component ({
 	selector: 'ctrack',
-	templateUrl: 'app/templates/c-track.component.html',
+	templateUrl: 'app/templates/track-viewer.component.html',
 })
 
 	export class TrackViewerComponent implements OnInit{
