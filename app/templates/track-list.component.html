@@ -1,5 +1,8 @@
 <br/><br/>
 <label class="tracktable">all ctracks</label>
-<ul *ngIf="tracks">
-  <li *ngFor="#track of tracks" (click)="onSelect(track.id)">{{track.topic}}</li>
+<ul *ngIf="tracks" class="cList">
+  <li *ngFor="#track of tracks" (click)="onSelect(track.id)">
+  <div class="trackTitle">{{track.topic}}</div>
+  <div class="trackDesc">{{track.desc}}</div>
+  </li>
 </ul>

@@ -19,10 +19,8 @@ import {RouteParams} 				from 'angular2/router';
 	}
 
 	ngOnInit() {
-		let id = +this._routeParams.get('id');
-		console.log(id);
+		let id = this._routeParams.get('id');
 		this._tracksService.getTrack(id).subscribe((res) => {
-			console.log(res);
 			this.ctrack = res;
 		});
 	}

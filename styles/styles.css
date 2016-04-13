@@ -12,6 +12,10 @@ header {
 	padding: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
 .head {
 	max-width: 800px;
 	margin: 0 auto;
@@ -30,9 +34,16 @@ header h1 {
 header a {
 	font-family: 'Open Sans';
 	font-weight: semibold;
-	text-decoration: none;
 	color: white;
 	font-size: 16pt;
+	color: rgba(255, 255, 255, .7);
+}
+
+header a:hover {
+	color: rgba(255, 255, 255, 1);
+}
+
+header nav {	
 	float: right;
 	text-align: right;
 	padding-top: 18px;
@@ -49,4 +60,40 @@ label.tracktable {
 	color: rgba(153, 153, 153, 1);
 	width: 100%;
 	border-bottom: 1px solid rgba(153, 153, 204, 1);
+}
+
+ul.cList li {
+	list-style-type: none;
+	border-left: 2px solid rgba(255, 153, 102, .8);
+	margin-bottom: 10px;
+	margin-left: -30px;
+	padding-left: 5px;
+}
+
+div.trackTitle {
+	font-family: 'PT Sans';
+	color: rgb(54, 54, 54);
+	font-size: 20pt;	
+	width: 200px;
+	position: static;
+}
+
+div.trackTitle:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+div.trackDesc {
+	font-family: 'Open Sans';
+	font-size: 11pt;
+	float: right;
+	position: static;
+	color: rgba(102,102,102,1);
+}
+
+main h2 {
+	font-family: 'Open Sans';
+	font-weight: semibold;
+	color: rgb(54, 54, 54);
+	margin-left: 50px;
 }
