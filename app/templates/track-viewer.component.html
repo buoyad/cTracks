@@ -1,0 +1,9 @@
+<div class="viewer" *ngIf="ctrack"><br/>
+<h2>{{ctrack.topic}}</h2>
+<dl *ngIf="ctrack.items">
+<span *ngFor="#item of ctrack.items">
+	<dt><a href="{{item.url}}" style="font-size: 18px">{{item.title}}</a></dt>
+	<dd>{{item.comment}}</dd>
+</span>
+</dl>
+</div>

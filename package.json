@@ -25,6 +25,5 @@
     "typescript": "^1.8.9",
     "typings":"^0.7.11"
   },
-  "homepage": "http://ctracks.volcanofan.com",
-  
+  "homepage": "http://ctracks.volcanofan.com"  
 }
