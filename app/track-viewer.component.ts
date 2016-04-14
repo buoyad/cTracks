@@ -3,12 +3,13 @@ import {Http} 						from 'angular2/http';
 import {Item}						from './item';
 import {Article}					from './article.ts';
 import {TracksService}				from './tracks.service';
-import {cTrack}						from './c-track';
-import {RouteParams} 				from 'angular2/router';
+import {cTrack}							from './c-track';
+import {RouteParams, ROUTER_DIRECTIVES} 				from 'angular2/router';
 
 @Component ({
 	selector: 'ctrack',
 	templateUrl: 'app/templates/track-viewer.component.html',
+	directives: [ROUTER_DIRECTIVES],
 })
 
 	export class TrackViewerComponent implements OnInit{
