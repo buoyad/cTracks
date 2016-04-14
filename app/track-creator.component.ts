@@ -18,6 +18,8 @@ export class TrackCreatorComponent {
 	description: string = "";
 	items: Item[] = [];
 
+	title: string;
+	url: string;
 	comment: string = "";
  	
  	pushTrack() {
@@ -28,7 +30,10 @@ export class TrackCreatorComponent {
 	  this.topic = ""; this.description = ""; this.items = new Array<Item>();
  	}
 
-	addArticle(title: string, url: string, comment: string){
-		this.items.push(new Article(title, url, comment));
+	addArticle(){
+		this.items.push(new Article(this.title, this.url, this.comment));
+		this.title = "";
+		this.url = "";
+		this.comment = "";
 	}
 }

@@ -29,6 +29,7 @@ header h1 {
 	padding-top: 4px;
 	font-size: 30pt;
 	float: left;
+	padding-left: 10px;
 }
 
 header a {
@@ -46,11 +47,14 @@ header nav {
 	float: right;
 	text-align: right;
 	padding-top: 18px;
+	padding-right: 10px;
 }
 
 main {
 	max-width: 800px;
 	margin: 0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 label.tracktable {
@@ -119,17 +123,19 @@ input.topicForm {
 	font-weight: bold;
 	color: white;
 	max-width: 500px;
-	width: 100%;
+	width: 80vw;
 	padding: 6px 20px;
 	font-size: 18pt;
+	margin-left: 15px;
 }
 
 input.summaryForm {
 	font-size: 11pt;
 	max-width: 500px;
-	width: 100%;
+	width: 80vw;
 	margin-top: 5px;
 	padding: 6px 20px;
+	margin-left: 15px;
 }
 
 input.topicForm.ng-valid {
@@ -143,12 +149,6 @@ form.newTrackForm label {
 	margin-left: 15px;
 }
 
-form.newArticleForm input {
-	width: 30%;
-	margin-right: 5px;
-	padding: 5px 5px;
-}
-
 form.newArticleForm textarea {
 	width: 30%;
 	margin-left: 50px;
@@ -156,6 +156,34 @@ form.newArticleForm textarea {
 	resize: none;
 	padding: 5px 5px;
 }
+
+@media screen and (min-width: 600px) {
+	form.newArticleForm input {
+		width: 30%;
+		margin-right: 5px;
+		padding: 5px 5px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	form.newArticleForm input {
+		width: 80%;
+		margin-top: -50px;
+		padding: 5px 5px;
+	}
+
+	input.urlInput {
+		margin-top: -20px;
+		margin-left: 49px;
+		margin-bottom: 15px;
+	}
+
+	form.newArticleForm textarea {
+		width: 80.2%;
+		margin-top: -10px;
+	}
+}
+
 
 form dl {
 	font-size: 18px;
@@ -172,20 +200,41 @@ form button {
 	margin: 10px;
 }
 
+/*button.submitButton {
+	display: inline-block;
+	padding: 5px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;	
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+}
+
+button.submitButton:active {
+
+}*/
+
 div.viewer dt {
 	font-family: 'PT Sans';
+	font-color: white;
 	font-size: 20px;
+	margin-left: 10px;
+	background-color: rgba(221, 200, 191, .2);
 }
 
 div.viewer dd {
 	font-family: 'Open Sans';
 	font-size: 15px;
-	border-bottom: 2px solid rgba(105, 105, 105, .3);
-	padding-bottom: 15px;
+	border-bottom: 2px solid rgba(0, 0, 0, .2);
 	margin-bottom: 10px;
+	padding-left: 40px;
+	margin-left: 10px;
+	background-color: rgba(221, 200, 191, .2);
 }
 
 div.viewer dl {
 	border-bottom: none;
-	list-style-type: disc;
 }

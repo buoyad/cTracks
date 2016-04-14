@@ -16,14 +16,14 @@ export class TracksService {
 
 	pushTrack(newTrack: cTrack) {
 		let ref = this.database.push();
-		ref.set({ id: ref.key() });
+		ref.setWithPriority({ id: ref.key() }, 0 - Date.now());
 		ref.set(newTrack);
 		return ref.key();
 	}
 
 	getTracks(): Observable<cTrack> {
 		return Observable.create(observer => {
-			let listener = this.database.on('child_added', snapshot => {
+			let listener = this.database.orderByKey().on('child_added', snapshot => {
 				let data = snapshot.val();
 				observer.next(new cTrack(snapshot.key(), data.topic, data.items, data.desc));
 			}, observer.error);
