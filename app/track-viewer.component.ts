@@ -21,6 +21,7 @@ import {RouteParams} 				from 'angular2/router';
 
 	ngOnInit() {
 		let id = this._routeParams.get('id');
+		this.found = true;
 		this._tracksService.getTrack(id).subscribe((res) => {
 			this.ctrack = res;
 			if (this.ctrack instanceof cTrack) this.found = true;
