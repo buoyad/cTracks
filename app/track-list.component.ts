@@ -1,12 +1,13 @@
 import {Component, OnInit, OnDestroy}	from 'angular2/core';
-import {cTrack}	from './c-track';
-import {TracksService}		from './tracks.service';
-import {Router}				from 'angular2/router';
-import {Observable}			from 'rxjs/Observable';
+import {cTrack}							from './c-track';
+import {TracksService}					from './tracks.service';
+import {Router, ROUTER_DIRECTIVES}		from 'angular2/router';
+import {Observable}						from 'rxjs/Observable';
 
 @Component ({
 	selector: 'tracklist',
-	templateUrl: 'app/templates/track-list.component.html'
+	templateUrl: 'app/templates/track-list.component.html',
+	directives: [ROUTER_DIRECTIVES]
 })
 
 export class TrackListComponent implements OnInit, OnDestroy {

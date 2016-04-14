@@ -37,6 +37,13 @@ header a {
 	color: white;
 	font-size: 16pt;
 	color: rgba(255, 255, 255, .7);
+	margin-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+	header a {
+		margin-left: 10px;
+	}
 }
 
 header a:hover {
@@ -238,3 +245,18 @@ div.viewer dd {
 div.viewer dl {
 	border-bottom: none;
 }
+
+footer a {
+	font-size: 16px;
+	text-align: right;
+	opacity: .6;
+}
+
+footer a:hover {
+	opacity: 1;
+}
+
+footer {
+	margin-top: 100px;
+}
+
