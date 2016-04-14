@@ -4,7 +4,7 @@ import {TracksService} 										from './tracks.service';
 import {TrackListComponent} 								from './track-list.component';
 import {TrackViewerComponent}								from './track-viewer.component';
 import {TrackCreatorComponent}								from './track-creator.component';
-import {AboutComponent}										from './about.component',
+import {AboutComponent}										from './about.component';
 
 @Component ({
 	selector: 'cTracks',
