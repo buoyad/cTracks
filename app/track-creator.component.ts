@@ -17,6 +17,8 @@ export class TrackCreatorComponent {
 	topic: string = "";
 	description: string = "";
 	items: Item[] = [];
+
+	comment: string = "";
  	
  	pushTrack() {
 	  let newTrack = new cTrack(null, this.topic, this.items, this.description);
