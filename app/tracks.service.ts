@@ -38,7 +38,11 @@ export class TracksService {
 		return Observable.create(observer => {
 			let listener = this.database.on('value', snapshot => {
 				let target = snapshot.val()[id];
-				observer.next(new cTrack(id, target.topic, target.items, target.desc));
+				console.log(target);
+				if (target)
+					observer.next(new cTrack(id, target.topic, target.items, target.desc));
+				else
+					observer.next(null);
 			}, observer.error);
 
 			return () => {

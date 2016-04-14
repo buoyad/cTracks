@@ -16,6 +16,16 @@ a {
 	text-decoration: none;
 }
 
+main p a {
+	font-family: 'Open Sans';
+	font-size: 15px;
+}
+
+main p {
+	font-family: 'Open Sans';
+	font-size: 15px;
+}
+
 .head {
 	max-width: 800px;
 	margin: 0 auto;

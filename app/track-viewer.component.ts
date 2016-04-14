@@ -13,6 +13,7 @@ import {RouteParams} 				from 'angular2/router';
 
 	export class TrackViewerComponent implements OnInit{
 	ctrack: cTrack;
+	found: boolean;
 
 	constructor(private _tracksService: TracksService, private _routeParams: RouteParams) {
 
@@ -22,6 +23,9 @@ import {RouteParams} 				from 'angular2/router';
 		let id = this._routeParams.get('id');
 		this._tracksService.getTrack(id).subscribe((res) => {
 			this.ctrack = res;
+			if (this.ctrack instanceof cTrack) this.found = true;
+			else this.found = false;
+			console.log(this.found);
 		});
 	}
 }
