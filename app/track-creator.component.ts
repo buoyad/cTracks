@@ -1,8 +1,8 @@
 import {Component}		from 'angular2/core';
 import {TracksService}	from './tracks.service';
 import {cTrack}			from './c-track';
-import {Item}			from './Item';
-import {Article}		from './Article';
+import {Item}			from './item';
+import {Article}		from './article';
 import {Router}			from 'angular2/router';
 
 @Component ({

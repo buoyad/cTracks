@@ -1,10 +1,9 @@
 import {Injectable} 		from 'angular2/core';
-import {Item}				from './item.component';
+import {Item}				from './item';
 import {cTrack}				from './c-track';
 import 'rxjs/Rx';
 import {Observable} 		from 'rxjs/Observable';
 import {Article} 			from './article';
-import {observableFirebaseObject, observableFirebaseArray, NgWhen} from 'angular2-firebase';
 import {URL} from './url';
 
 @Injectable ()
