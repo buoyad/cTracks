@@ -27,7 +27,7 @@ import {RouteParams, ROUTER_DIRECTIVES} 				from 'angular2/router';
 			this.ctrack = res;
 			if (this.ctrack instanceof cTrack) this.found = true;
 			else this.found = false;
-			console.log(this.found);
+			//console.log(this.found);
 		});
 	}
 }

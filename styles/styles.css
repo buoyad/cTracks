@@ -115,6 +115,12 @@ main h2 {
 	color: rgb(54, 54, 54);
 }
 
+main h1 {
+	font-family: 'Open sans';
+	color: rgb(54, 54, 54);
+	font-size: 45px;
+}
+
 main a {
 	font-family: 'PT Sans';
 	font-size: 25px;
@@ -238,19 +244,55 @@ button.submitButton:active {
 div.viewer dt {
 	font-family: 'PT Sans';
 	font-color: white;
-	font-size: 20px;
-	margin-left: 10px;
-	background-color: rgba(221, 200, 191, .2);
+	font-size: 40px;
+}
+
+article.item a {
+	font-size: 40px;
+	color: orange;
+}
+
+@media screen and (max-width: 600px) {
+	article.item a {
+		font-size: 30px;
+		line-height: 0;
+	}
+
+	div.viewer dd {
+		font-size: 17px;
+	}
 }
 
 div.viewer dd {
 	font-family: 'Open Sans';
-	font-size: 15px;
-	border-bottom: 2px solid rgba(0, 0, 0, .2);
-	margin-bottom: 10px;
-	padding-left: 40px;
+	font-size: 23px;
 	margin-left: 10px;
-	background-color: rgba(221, 200, 191, .2);
+	color: black;
+}
+
+div.viewer dd:hover {
+	text-decoration: none !important;
+}
+
+div.viewer article {
+	background-color: rgba(221,200,191,.2);
+	margin-bottom: 10px;
+	padding: 15px 20px 20px 30px;
+	border-bottom: 4px solid rgba(54, 54, 54, .1);
+}
+
+div.viewer article:active {
+	-webkit-transform: translate(0px, 4px);
+    -moz-transform: translate(0px, 4px);
+    -o-transform: translate(0px, 4px);
+    -ms-transform: translate(0px, 4px);
+    transform: translate(0px, 4px);
+    border-bottom: none;
+    margin-bottom: 14px;
+}
+
+div.viewer a:hover {
+	text-decoration: none;
 }
 
 div.viewer dl {

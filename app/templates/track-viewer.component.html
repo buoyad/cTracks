@@ -1,10 +1,12 @@
 <div class="viewer" *ngIf="ctrack"><br/>
-<h2>{{ctrack.topic}}</h2>
+<h1>{{ctrack.topic}}</h1>
 <dl *ngIf="ctrack.items">
-<span *ngFor="#item of ctrack.items">
-	<dt><a href="{{item.url}}" target="_blank" style="font-size: 18px">{{item.title}}</a></dt>
+<a href="{{item.url}}" target="_blank" *ngFor="#item of ctrack.items" >
+<article class="item">
+	<dt>{{item.title}}</dt>
 	<dd>{{item.comment}}</dd>
-</span>
+</article>
+</a>
 </dl>
 </div>
 <div class="viewer" *ngIf="!found"><br/>
