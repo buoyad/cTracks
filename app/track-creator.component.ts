@@ -58,6 +58,7 @@ export class TrackCreatorComponent {
 			"description": this.description
 		};
 		this._cookieService.putObject('WIP', save);
+		alert('cTrack saved!');
 	}
 
 	clear() {
