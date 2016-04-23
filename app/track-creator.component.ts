@@ -4,6 +4,7 @@ import {cTrack}			from './c-track';
 import {Item}			from './item';
 import {Article}		from './article';
 import {Router}			from 'angular2/router';
+import {Cookie} 		from 'ng2-cookies/ng2-cookies';
 
 @Component ({
 	selector: 'creator',
@@ -12,11 +13,19 @@ import {Router}			from 'angular2/router';
 
 export class TrackCreatorComponent {
 
-	constructor(private _trackssService: TracksService, private _router: Router) { }
-
-	topic: string = "";
-	description: string = "";
+	topic: string;
+	description: string;
 	items: Item[] = [];
+
+	constructor(private _trackssService: TracksService, private _router: Router) {
+		let savedTrack: string = Cookie.getCookie('WIP');
+		if (savedTrack) {
+			let save: any = JSON.parse(savedTrack);
+			this.topic = save.topic;
+			this.description = save.description;
+			this.items = save.items;
+		}
+	}
 
 	title: string;
 	url: string;
@@ -35,5 +44,15 @@ export class TrackCreatorComponent {
 		this.title = "";
 		this.url = "";
 		this.comment = "";
+	}
+
+	saveTrack() {
+		let save: any = {
+			"topic": this.topic,
+			"items": this.items,
+			"description": this.description
+		};
+		save = JSON.stringify(save);
+		Cookie.setCookie('WIP', save);
 	}
 }
