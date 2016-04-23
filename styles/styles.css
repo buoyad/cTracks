@@ -215,13 +215,38 @@ form dl {
 form dd {
 	margin-left: 5px;
 	font-size: 12pt;
-	border-bottom: 2px solid rgba(105, 105, 105, .3);
+	border-bottom: 2px dashed rgba(105, 105, 105, .3);
 }
 
 form button {
 	font-size: 15px;
 	margin: 10px;
 }
+
+button.ctrlButton {
+	margin-left: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+button.submitButton {
+	float: right;
+	margin-right: 5%;
+}
+
+@media screen and (min-width: 600px) {
+	button.submitButton {
+		margin-right: 30%;
+	}
+}
+
+/*
+button.delete {
+	color: white;
+	background-color: #C1541C;
+	border: none;
+	padding: 5px 5px 5px 5px;
+}*/
 
 /*button.submitButton {
 	display: inline-block;

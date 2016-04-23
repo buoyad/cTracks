@@ -4,7 +4,7 @@ import {cTrack}			from './c-track';
 import {Item}			from './item';
 import {Article}		from './article';
 import {Router}			from 'angular2/router';
-import {Cookie} 		from 'ng2-cookies/ng2-cookies';
+import {CookieService} 	from 'angular2-cookie/core';
 
 @Component ({
 	selector: 'creator',
@@ -17,13 +17,12 @@ export class TrackCreatorComponent {
 	description: string;
 	items: Item[] = [];
 
-	constructor(private _trackssService: TracksService, private _router: Router) {
-		let savedTrack: string = Cookie.getCookie('WIP');
+	constructor(private _trackssService: TracksService, private _router: Router, private _cookieService: CookieService) {
+		let savedTrack: any = this._cookieService.getObject('WIP');
 		if (savedTrack) {
-			let save: any = JSON.parse(savedTrack);
-			this.topic = save.topic;
-			this.description = save.description;
-			this.items = save.items;
+			this.topic = savedTrack.topic;
+			this.description = savedTrack.description;
+			this.items = savedTrack.items;
 		}
 	}
 
@@ -35,6 +34,7 @@ export class TrackCreatorComponent {
 	  let newTrack = new cTrack(null, this.topic, this.items, this.description);
 	  console.log(newTrack);
 	  let sid = this._trackssService.pushTrack(newTrack);
+	  this._cookieService.remove('WIP');
 	  this._router.navigate(['ViewTrack', { id: sid }]);
 	  this.topic = ""; this.description = ""; this.items = new Array<Item>();
  	}
@@ -46,13 +46,29 @@ export class TrackCreatorComponent {
 		this.comment = "";
 	}
 
+	removeItem(item: Item) {
+		let i = this.items.indexOf(item);
+		this.items.splice(i, 1);
+	}
+
 	saveTrack() {
 		let save: any = {
 			"topic": this.topic,
 			"items": this.items,
 			"description": this.description
 		};
-		save = JSON.stringify(save);
-		Cookie.setCookie('WIP', save);
+		this._cookieService.putObject('WIP', save);
+	}
+
+	clear() {
+		if (confirm('Warning: This will permanently delete your current cTrack')) {
+			this.topic = "";
+			this.description = "";
+			this.items = new Array<Item>();
+			this.title = "";
+			this.url = "";
+			this.comment = "";
+			this._cookieService.remove('WIP');
+		}
 	}
 }

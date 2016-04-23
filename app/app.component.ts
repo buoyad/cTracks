@@ -5,11 +5,12 @@ import {TrackListComponent} 								from './track-list.component';
 import {TrackViewerComponent}								from './track-viewer.component';
 import {TrackCreatorComponent}								from './track-creator.component';
 import {AboutComponent}										from './about.component';
+import {CookieService} 	from 'angular2-cookie/core';
 
 @Component ({
 	selector: 'cTracks',
 	templateUrl: 'app/templates/app.component.html',
-	providers: [TracksService, ROUTER_PROVIDERS],
+	providers: [TracksService, ROUTER_PROVIDERS, CookieService],
 	directives: [TrackListComponent, ROUTER_DIRECTIVES, TrackCreatorComponent],
 })
 

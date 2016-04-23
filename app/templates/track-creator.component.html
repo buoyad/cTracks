@@ -7,6 +7,7 @@
 	<dl class="itemList">
 	<span *ngFor="#item of items" required>
 		<dt>
+		<button type="button" class="delete" (click)="removeItem(item)">×</button>
 		<a href="{{item.url}}">{{item.title}}</a>
 		</dt>
 		<dd> {{item.comment}} </dd>
@@ -18,5 +19,7 @@
 		<input type="url" class="urlInput" [(ngModel)]="url" placeholder="url" required/><br/>
 		<textarea type="text" [(ngModel)]="comment" placeholder="Description"></textarea>
 	</form><br/>
+	<button class="ctrlButton" type="button" (click)="saveTrack()">Save</button>
+	<button class="ctrlButton" type="button" (click)="clear()">Clear</button>
 	<button class="submitButton" type="submit" [disabled]="!newTrackForm.form.valid">Create track</button>
 </form>
