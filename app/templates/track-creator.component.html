@@ -8,7 +8,7 @@
 	<span *ngFor="#item of items" required>
 		<dt>
 		<button type="button" class="delete" (click)="removeItem(item)">×</button>
-		<a href="{{item.url}}">{{item.title}}</a>
+		<a href="{{item.url}}" target="_blank">{{item.title}}</a>
 		</dt>
 		<dd> {{item.comment}} </dd>
 	</span>
