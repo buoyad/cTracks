@@ -4,9 +4,27 @@
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700|Open+Sans:400,600' rel='stylesheet' type='text/css'>
     <base href="/">
-    <title>cTracks - Curated Article Tracks</title>
+    <title>cTracks</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <style>
+    html {
+      max-width: 500px;
+      width: 100%;
+      margin-left: 12px;
+    }
+
+    input, textarea {
+      padding: 2px;
+    }
+
+    ol {
+      padding-left: 30px;
+    }
+
+    dt:hover {
+      cursor: pointer;
+    }
+    </style>
 
 
     <!-- 1. Load libraries -->
@@ -47,6 +65,7 @@
 
   <body>
   <!-- 3. Display the application -->
+    <h2>cTracks</h2>
     <cTracks>Loading...</cTracks>
   </body>
 </html>

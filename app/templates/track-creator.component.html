@@ -1,25 +1,61 @@
-<br/>
-<h2>new cTrack</h2>
+<h3>New cTrack</h3>
 <form (ngSubmit)="pushTrack()" #newTrackForm="ngForm" class="newTrackForm">
-	<input type="text" [(ngModel)]="topic" placeholder="Topic" class="topicForm" required/><br/>
-	<input type="text" [(ngModel)]="description" placeholder="Summary" class="summaryForm" required/><br/><br/>
-	<label>Add articles:</label>
-	<dl class="itemList">
-	<span *ngFor="#item of items" required>
+	<table>
+
+		<tr>
+			<td>Topic: </td> 
+			<td><input type="text" size="30" maxlength="45" [(ngModel)]="topic" required/></td>
+		</tr>
+
+		<tr>
+			<td>Summary: </td>
+			<td><textarea type="text" rows="1" cols="32" [(ngModel)]="description" required></textarea></td>
+		</tr>
+	</table>
+	<br/>
+	<table>
+		<tr>
+			<td><label>Add links:</label></td>
+			<td></td>
+		</tr>
+
+		<form (ngSubmit)="addArticle()" #newItemForm="ngForm">
+
+		<tr>
+			<td><button type="submit" [disabled]="!newItemForm.form.valid">+</button></td>
+			<td><input type="text" size="25" [(ngModel)]="title" placeholder="Title" required/></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><input type="url" size="25" class="urlInput" [(ngModel)]="url" placeholder="url" required/></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td><textarea type="text" rows="2" cols="27" [(ngModel)]="comment" placeholder="Description"></textarea></td>
+		</tr>
+
+
+		</form>
+
+	</table>
+	<br/>
+	<button type="button" (click)="saveTrack()">Save</button>
+	<button type="button" (click)="clear()">Clear</button>
+	<button type="submit" [disabled]="!newTrackForm.form.valid">Create track</button>
+</form>
+<br/>
+<hr/>
+<br/>
+<strong>Preview:</strong>
+<h3>{{topic}}</h3>
+<dl>
+	<article *ngFor="#item of items">
 		<dt>
-		<button type="button" class="delete" (click)="removeItem(item)">×</button>
+		<button type="button" (click)="removeItem(item)">×</button>
 		<a href="{{item.url}}" target="_blank">{{item.title}}</a>
 		</dt>
 		<dd> {{item.comment}} </dd>
-	</span>
-	</dl>
-	<form class="newArticleForm" (ngSubmit)="addArticle()" #newItemForm="ngForm">
-		<button type="submit" [disabled]="!newItemForm.form.valid">+</button>
-		<input type="text" [(ngModel)]="title" placeholder="Title" required/>
-		<input type="url" class="urlInput" [(ngModel)]="url" placeholder="url" required/><br/>
-		<textarea type="text" [(ngModel)]="comment" placeholder="Description"></textarea>
-	</form><br/>
-	<button class="ctrlButton" type="button" (click)="saveTrack()">Save</button>
-	<button class="ctrlButton" type="button" (click)="clear()">Clear</button>
-	<button class="submitButton" type="submit" [disabled]="!newTrackForm.form.valid">Create track</button>
-</form>
+	</article>
+</dl>

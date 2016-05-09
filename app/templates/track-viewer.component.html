@@ -1,15 +1,13 @@
-<div class="viewer" *ngIf="ctrack"><br/>
-<h1>{{ctrack.topic}}</h1>
-<dl *ngIf="ctrack.items">
-<a href="{{item.url}}" target="_blank" *ngFor="#item of ctrack.items" >
-<article class="item">
-	<dt>{{item.title}}</dt>
-	<dd>{{item.comment}}</dd>
+<div *ngIf="ctrack">
+<h3>{{ctrack.topic}}</h3>
+<ol *ngIf="ctrack.items">
+<article class="item" *ngFor="#item of ctrack.items">
+	<li><a href="{{item.url}}" target="_blank">{{item.title}}</a></li>
+	<dd>{{item.comment}}</dd><br/>
 </article>
-</a>
-</dl>
+</ol>
 </div>
 <div class="viewer" *ngIf="!found"><br/>
-<img src="/img/urlost.gif" style="{margin: 0 auto; max-width: 80%;}" />
+<img src="/img/urlost.gif" style="{margin: 0 auto;}" />
 <p>go <a [routerLink]="['Home']">home</a></p>
 </div>

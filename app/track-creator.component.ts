@@ -37,6 +37,7 @@ export class TrackCreatorComponent {
 	  this._cookieService.remove('WIP');
 	  this._router.navigate(['ViewTrack', { id: sid }]);
 	  this.topic = ""; this.description = ""; this.items = new Array<Item>();
+	  this._cookieService.put(sid, '1');
  	}
 
 	addArticle(){

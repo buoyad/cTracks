@@ -1,9 +1,13 @@
-<br/><br/>
-<label class="tracktable">all ctracks</label>
-<ul *ngIf="tracks" class="cList">
-  <li *ngFor="#track of tracks" (click)="onSelect(track.id)">
-  <div class="trackTitle">{{track.topic}}</div>
-  <div class="trackDesc">{{track.desc}}</div>
-  </li>
-</ul>
+<br/>
+<strong>All cTracks</strong><br/>
+<section *ngIf="tracks">
+  <dl>
+	  <article *ngFor="#track of tracks" (click)="onSelect(track.id)">
+		  <dt>፨  {{track.topic}}</dt>
+		  <dd>{{track.desc}}</dd>
+	  	  <hr/>
+	  </article>
+  </dl>
+  <p><em>cTracks is a tool to quickly create lists of annotated sources.</em></p>
+</section>
 <!--<footer><a [routerLink]="['About']">about</a></footer>-->
