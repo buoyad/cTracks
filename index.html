@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <style>
     body {
-      max-width: 500px;
+      max-width: 600px;
       padding: 10px 10px;
-      margin: 0px;
+      margin: 0;
     }
 
     input, textarea {
@@ -23,6 +23,30 @@
 
     dt:hover {
       cursor: pointer;
+    }
+
+    .fadeout {
+      color: black;
+      animation: fadeOut;
+      animation-duration: 1s;
+    }
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 0;
+      }
+
+      5% {
+        opacity: 1;
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
     }
     </style>
 

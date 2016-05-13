@@ -5,6 +5,7 @@ import {Item}			from './item';
 import {Article}		from './article';
 import {Router}			from 'angular2/router';
 import {CookieService} 	from 'angular2-cookie/core';
+import {TimerWrapper}	from 'angular2/src/facade/async'
 
 @Component ({
 	selector: 'creator',
@@ -16,6 +17,9 @@ export class TrackCreatorComponent {
 	topic: string;
 	description: string;
 	items: Item[] = [];
+	saving: boolean;
+
+	saveMessage: string;
 
 	constructor(private _trackssService: TracksService, private _router: Router, private _cookieService: CookieService) {
 		let savedTrack: any = this._cookieService.getObject('WIP');
@@ -24,6 +28,7 @@ export class TrackCreatorComponent {
 			this.description = savedTrack.description;
 			this.items = savedTrack.items;
 		}
+		this.saving = false;
 	}
 
 	title: string;
@@ -53,24 +58,40 @@ export class TrackCreatorComponent {
 	}
 
 	saveTrack() {
+		this.showSaveMessage();
 		let save: any = {
 			"topic": this.topic,
 			"items": this.items,
 			"description": this.description
 		};
 		this._cookieService.putObject('WIP', save);
-		alert('cTrack saved!');
+	}
+
+	showSaveMessage() {
+		this.saving = true;
+		TimerWrapper.setTimeout(() => {
+			this.saving = false;
+		}, 900)
+		this.saveMessage = "cTrack saved!";
+
 	}
 
 	clear() {
-		if (confirm('Warning: This will permanently delete your current cTrack')) {
-			this.topic = "";
-			this.description = "";
-			this.items = new Array<Item>();
-			this.title = "";
-			this.url = "";
-			this.comment = "";
-			this._cookieService.remove('WIP');
+		if (this.items.length > 0) {
+			if (confirm('Warning: This will permanently delete your current cTrack')) {
+				this.clearTrack();
+			}
 		}
+		else this.clearTrack();
+	}
+
+	clearTrack() {
+		this.topic = "";
+		this.description = "";
+		this.items = new Array<Item>();
+		this.title = "";
+		this.url = "";
+		this.comment = "";
+		this._cookieService.remove('WIP');
 	}
 }

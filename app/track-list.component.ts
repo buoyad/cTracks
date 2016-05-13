@@ -18,7 +18,7 @@ export class TrackListComponent implements OnInit, OnDestroy {
 	selectedTrack: cTrack;
 	ngOnInit() {
 		this._tracksService.getTracks().subscribe(obj => {
-			this.tracks.push(obj);
+			this.tracks.unshift(obj);
 			this.rawTracks[obj.id] = obj;
 		});
 	}
