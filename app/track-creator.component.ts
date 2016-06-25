@@ -17,6 +17,7 @@ export class TrackCreatorComponent {
 	topic: string;
 	description: string;
 	items: Item[] = [];
+	editableItems: boolean[] = [];
 	saving: boolean;
 
 	saveMessage: string;
@@ -50,6 +51,7 @@ export class TrackCreatorComponent {
 		this.title = "";
 		this.url = "";
 		this.comment = "";
+		this.editableItems.push(false);
 	}
 
 	removeItem(item: Item) {
@@ -93,5 +95,15 @@ export class TrackCreatorComponent {
 		this.url = "";
 		this.comment = "";
 		this._cookieService.remove('WIP');
+	}
+
+	toggleEdit(item: Item) {
+		var i: number = this.items.indexOf(item);
+		this.editableItems[i] = !this.editableItems[i];
+	}
+
+	isEditable(item: Item): boolean {
+		var i: number = this.items.indexOf(item);
+		return this.editableItems[i];
 	}
 }
